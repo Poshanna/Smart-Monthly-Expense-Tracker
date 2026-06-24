@@ -38,53 +38,7 @@ A modern, full-stack expense tracking application with AI-powered receipt scanni
 - Node.js 16+
 - npm or yarn
 
-### Backend Setup
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-
-2. Create a virtual environment:
-   - **Windows**:
-     ```bash
-     python -m venv venv
-     .\venv\Scripts\activate
-     ```
-   - **Linux/macOS**:
-     ```bash
-     python3 -m venv venv
-     source venv/bin/activate
-     ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Run the backend server:
-   ```bash
-   uvicorn main:app --host 0.0.0.0 --port 8001 --reload
-   ```
-   Backend API docs will be available at http://localhost:8001/docs
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the frontend development server:
-   ```bash
-   npm run dev
-   ```
-   Frontend will be available at http://localhost:5173 (or the port shown in terminal)
 
 ## 📱 Usage
 
