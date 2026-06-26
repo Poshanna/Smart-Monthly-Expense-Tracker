@@ -83,15 +83,15 @@ function Budgets({ onLogout }) {
               <div className="mb-8">
                 <div className="flex justify-between text-lg mb-2">
                   <span className="text-gray-600 dark:text-gray-400">Spent</span>
-                  <span className="text-red-600 font-semibold">${spent.toFixed(2)}</span>
+                  <span className="text-red-600 font-semibold">₹{spent.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-lg mb-2">
                   <span className="text-gray-600 dark:text-gray-400">Remaining</span>
-                  <span className="text-green-600 font-semibold">${remaining.toFixed(2)}</span>
+                  <span className="text-green-600 font-semibold">₹{remaining.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-lg mb-4">
                   <span className="text-gray-600 dark:text-gray-400">Total Budget</span>
-                  <span className="text-gray-800 dark:text-white font-semibold">${total.toFixed(2)}</span>
+                  <span className="text-gray-800 dark:text-white font-semibold">₹{total.toFixed(2)}</span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
                   <div

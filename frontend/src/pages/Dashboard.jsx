@@ -56,7 +56,7 @@ function Dashboard({ token }) {
       <h1 className="text-3xl font-bold text-gray-800 mb-8">Dashboard</h1>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="text-sm text-gray-600 mb-1">Today's Expense</div>
           <div className="text-3xl font-bold text-red-600">₹{summary?.today_expense.toFixed(2)}</div>
@@ -64,6 +64,10 @@ function Dashboard({ token }) {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="text-sm text-gray-600 mb-1">Monthly Expense</div>
           <div className="text-3xl font-bold text-orange-600">₹{summary?.monthly_expense.toFixed(2)}</div>
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="text-sm text-gray-600 mb-1">Total Expenses</div>
+          <div className="text-3xl font-bold text-purple-600">₹{summary?.total_expenses.toFixed(2)}</div>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="text-sm text-gray-600 mb-1">Total Savings</div>

@@ -391,6 +391,10 @@ def get_dashboard_summary(
         Expense.expense_date >= start_of_year
     ).scalar() or 0.0
 
+    total_expenses = db.query(func.sum(Expense.amount)).filter(
+        Expense.user_id == current_user.id
+    ).scalar() or 0.0
+
     total_savings = db.query(func.sum(Goal.saved_amount)).filter(
         Goal.user_id == current_user.id
     ).scalar() or 0.0
@@ -408,6 +412,7 @@ def get_dashboard_summary(
         "today_expense": today_expenses,
         "monthly_expense": monthly_expenses,
         "yearly_expense": yearly_expenses,
+        "total_expenses": total_expenses,
         "total_savings": total_savings,
         "total_transactions": total_transactions,
         "active_goals": active_goals
