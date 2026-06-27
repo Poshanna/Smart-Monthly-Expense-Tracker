@@ -23,7 +23,7 @@ function Expenses({ token }) {
 
   const fetchExpenses = async () => {
     try {
-      const response = await axios.get('https://smart-expense-tracker-1.onrender.com/expenses/', {
+      const response = await axios.get('https://smart-monthly-expense-tracker-1.onrender.com/expenses/', {
         headers: { Authorization: `Bearer ${token}` },
       })
       setExpenses(response.data)
@@ -121,12 +121,12 @@ function Expenses({ token }) {
       
       if (editingExpense) {
         console.log('Updating existing expense...')
-        await axios.put(`https://smart-expense-tracker-1.onrender.com/expenses/${editingExpense.id}`, expenseData, {
+        await axios.put(`https://smart-monthly-expense-tracker-1.onrender.com/expenses/${editingExpense.id}`, expenseData, {
           headers: { Authorization: `Bearer ${token}` },
         })
       } else {
         console.log('Creating new expense...')
-        await axios.post('https://smart-expense-tracker-1.onrender.com/expenses/', expenseData, {
+        await axios.post('https://smart-monthly-expense-tracker-1.onrender.com/expenses/', expenseData, {
           headers: { Authorization: `Bearer ${token}` },
         })
       }
@@ -160,7 +160,7 @@ function Expenses({ token }) {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this expense?')) {
       try {
-        await axios.delete(`https://smart-expense-tracker-1.onrender.com/expenses/${id}`, {
+        await axios.delete(`https://smart-monthly-expense-tracker-1.onrender.com/expenses/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         fetchExpenses()

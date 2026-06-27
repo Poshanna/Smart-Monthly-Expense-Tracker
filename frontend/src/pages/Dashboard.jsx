@@ -13,10 +13,10 @@ function Dashboard({ token }) {
     const fetchData = async () => {
       try {
         const [summaryRes, analyticsRes] = await Promise.all([
-          axios.get('https://smart-expense-tracker-1.onrender.com/dashboard/summary', {
+          axios.get('https://smart-monthly-expense-tracker-1.onrender.com/dashboard/summary', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('https://smart-expense-tracker-1.onrender.com/analytics/monthly', {
+          axios.get('https://smart-monthly-expense-tracker-1.onrender.com/analytics/monthly', {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ])
