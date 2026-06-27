@@ -10,10 +10,10 @@ function Budget({ token }) {
   const fetchData = async () => {
     try {
       const [budgetRes, summaryRes] = await Promise.all([
-        axios.get('http://localhost:8001/budgets/', {
+        axios.get('https://smart-monthly-expense-tracker-1.onrender.com/budgets/', {
           headers: { Authorization: `Bearer ${token}` },
         }).catch(() => ({ data: null })),
-        axios.get('http://localhost:8001/dashboard/summary', {
+        axios.get('https://smart-monthly-expense-tracker-1.onrender.com/dashboard/summary', {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ])
@@ -37,7 +37,7 @@ function Budget({ token }) {
     e.preventDefault()
     try {
       await axios.post(
-        'http://localhost:8001/budgets/',
+        'https://smart-monthly-expense-tracker-1.onrender.com/budgets/',
         { monthly_budget: parseFloat(monthlyBudget) },
         {
           headers: { Authorization: `Bearer ${token}` },

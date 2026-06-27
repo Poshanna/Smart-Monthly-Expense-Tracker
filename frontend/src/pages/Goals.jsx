@@ -14,7 +14,7 @@ function Goals({ token }) {
 
   const fetchGoals = async () => {
     try {
-      const response = await axios.get('http://localhost:8001/goals/', {
+      const response = await axios.get('https://smart-monthly-expense-tracker-1.onrender.com/goals/', {
         headers: { Authorization: `Bearer ${token}` },
       })
       setGoals(response.data)
@@ -38,11 +38,11 @@ function Goals({ token }) {
         saved_amount: parseFloat(formData.saved_amount),
       }
       if (editingGoal) {
-        await axios.put(`http://localhost:8001/goals/${editingGoal.id}`, goalData, {
+        await axios.put(`https://smart-monthly-expense-tracker-1.onrender.com/goals/${editingGoal.id}`, goalData, {
           headers: { Authorization: `Bearer ${token}` },
         })
       } else {
-        await axios.post('http://localhost:8001/goals/', goalData, {
+        await axios.post('https://smart-monthly-expense-tracker-1.onrender.com/goals/', goalData, {
           headers: { Authorization: `Bearer ${token}` },
         })
       }
@@ -67,7 +67,7 @@ function Goals({ token }) {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this goal?')) {
       try {
-        await axios.delete(`http://localhost:8001/goals/${id}`, {
+        await axios.delete(`https://smart-monthly-expense-tracker-1.onrender.com/goals/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         fetchGoals()

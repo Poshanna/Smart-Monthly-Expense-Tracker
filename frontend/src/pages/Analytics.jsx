@@ -12,13 +12,13 @@ function Analytics({ token }) {
     const fetchData = async () => {
       try {
         const [dailyRes, monthlyRes, yearlyRes] = await Promise.all([
-          axios.get('http://localhost:8001/analytics/daily', {
+          axios.get('https://smart-monthly-expense-tracker-1.onrender.com/analytics/daily', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:8001/analytics/monthly', {
+          axios.get('https://smart-monthly-expense-tracker-1.onrender.com/analytics/monthly', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:8001/analytics/yearly', {
+          axios.get('https://smart-monthly-expense-tracker-1.onrender.com/analytics/yearly', {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ])

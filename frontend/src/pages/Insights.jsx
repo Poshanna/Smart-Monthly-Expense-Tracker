@@ -10,10 +10,10 @@ function Insights({ token }) {
     const fetchData = async () => {
       try {
         const [healthRes, insightsRes] = await Promise.all([
-          axios.get('http://localhost:8001/financial-health', {
+          axios.get('https://smart-monthly-expense-tracker-1.onrender.com/financial-health', {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://localhost:8001/ai-insights', {
+          axios.get('https://smart-monthly-expense-tracker-1.onrender.com/ai-insights', {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ])
