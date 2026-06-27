@@ -4,7 +4,7 @@ A modern, full-stack expense tracking application with AI-powered receipt scanni
 
 ## 🌐 Live Demo
 
-- **Frontend**: https://smart-monthly-expense-tracker-1n3khx7i-nani18.vercel.app/
+- **Frontend**: https://smart-monthly-expense-tracker-fleqqih1i-nani18.vercel.app/
 - **Backend API**: https://smart-monthly-expense-tracker-1.onrender.com/
 - **Backend API Docs**: https://smart-monthly-expense-tracker-1.onrender.com/docs
 
