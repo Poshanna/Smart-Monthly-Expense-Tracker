@@ -4,7 +4,7 @@ function Reports({ onLogout }) {
   const handleDownloadPDF = async () => {
     const token = localStorage.getItem('token')
     try {
-      const response = await fetch('http://localhost:8001/reports/daily/pdf', {
+      const response = await fetch('https://smart-monthly-expense-tracker-1.onrender.com/reports/daily/pdf', {
         headers: { Authorization: `Bearer ${token}` }
       })
       const blob = await response.blob()
@@ -21,7 +21,7 @@ function Reports({ onLogout }) {
   const handleDownloadCSV = async () => {
     const token = localStorage.getItem('token')
     try {
-      const response = await fetch('http://localhost:8001/reports/daily/csv', {
+      const response = await fetch('https://smart-monthly-expense-tracker-1.onrender.com/reports/daily/csv', {
         headers: { Authorization: `Bearer ${token}` }
       })
       const blob = await response.blob()

@@ -16,7 +16,7 @@ function Budgets({ onLogout }) {
   const fetchBudget = async () => {
     const token = localStorage.getItem('token')
     try {
-      const response = await axios.get('http://localhost:8001/budgets/', {
+      const response = await axios.get('https://smart-monthly-expense-tracker-1.onrender.com/budgets/', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setBudget(response.data)
@@ -30,7 +30,7 @@ function Budgets({ onLogout }) {
   const fetchSummary = async () => {
     const token = localStorage.getItem('token')
     try {
-      const response = await axios.get('http://localhost:8001/dashboard/summary', {
+      const response = await axios.get('https://smart-monthly-expense-tracker-1.onrender.com/dashboard/summary', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setDashboardSummary(response.data)
@@ -42,7 +42,7 @@ function Budgets({ onLogout }) {
   const handleSave = async () => {
     const token = localStorage.getItem('token')
     try {
-      await axios.post('http://localhost:8001/budgets/', {
+      await axios.post('https://smart-monthly-expense-tracker-1.onrender.com/budgets/', {
         monthly_budget: parseFloat(monthlyBudget)
       }, {
         headers: { Authorization: `Bearer ${token}` }

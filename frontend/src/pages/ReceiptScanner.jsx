@@ -27,7 +27,7 @@ function ReceiptScanner({ onLogout }) {
     const formDataObj = new FormData()
     formDataObj.append('file', file)
     try {
-      const response = await axios.post('http://localhost:8001/ocr/scan', formDataObj, {
+      const response = await axios.post('https://smart-monthly-expense-tracker-1.onrender.com/ocr/scan', formDataObj, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -51,7 +51,7 @@ function ReceiptScanner({ onLogout }) {
   const handleSave = async () => {
     const token = localStorage.getItem('token')
     try {
-      await axios.post('http://localhost:8001/expenses/', {
+      await axios.post('https://smart-monthly-expense-tracker-1.onrender.com/expenses/', {
         ...formData,
         expense_date: new Date(formData.expense_date).toISOString()
       }, {
