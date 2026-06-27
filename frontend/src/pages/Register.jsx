@@ -14,7 +14,7 @@ function Register({ setToken }) {
     e.preventDefault()
     setError('')
     try {
-      await axios.post('http://localhost:8001/register', {
+      await axios.post('https://smart-expense-tracker-1.onrender.com/register', {
         full_name: fullName,
         email,
         phone,
@@ -23,7 +23,7 @@ function Register({ setToken }) {
       const formData = new URLSearchParams()
       formData.append('username', email)
       formData.append('password', password)
-      const response = await axios.post('http://localhost:8001/token', formData, {
+      const response = await axios.post('https://smart-expense-tracker-1.onrender.com/token', formData, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },

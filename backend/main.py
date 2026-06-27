@@ -30,6 +30,12 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Smart Finance Assistant API")
 
+
+@app.get("/")
+def read_root():
+    return {"message": "Smart Finance Assistant API is running!", "docs": "/docs"}
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
