@@ -49,7 +49,7 @@ function Expenses({ token }) {
       const formDataOCR = new FormData()
       formDataOCR.append('file', file)
       
-      const response = await axios.post('https://smart-expense-tracker-1.onrender.com/ocr/scan', formDataOCR, {
+      const response = await axios.post('https://smart-monthly-expense-tracker-1.onrender.com/ocr/scan', formDataOCR, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
