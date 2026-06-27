@@ -107,7 +107,6 @@ function Expenses({ token }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Submit button clicked!')
     console.log('Submitting expense...')
     console.log('Form data:', formData)
     try {
@@ -350,7 +349,7 @@ function Expenses({ token }) {
                 <div className="flex space-x-4 pt-4">
                   <button
                     type="submit"
-                    onClick={() => console.log('Add button clicked!')}
+
                     className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg"
                   >
                     {editingExpense ? 'Update' : 'Add'}
