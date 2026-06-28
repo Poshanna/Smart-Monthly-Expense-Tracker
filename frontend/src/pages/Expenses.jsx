@@ -191,9 +191,9 @@ function Expenses({ token }) {
   }
 
   return (
-    <div className="p-6 max-w-7xl mx-auto">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">Expenses</h1>
+    <div className="p-4 md:p-6 max-w-7xl mx-auto">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-4">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800">Expenses</h1>
         <button
           onClick={() => {
             resetForm()
@@ -205,7 +205,52 @@ function Expenses({ token }) {
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      {/* Mobile View - Cards */}
+      <div className="md:hidden space-y-4">
+        {expenses.map((expense) => (
+          <div key={expense.id} className="bg-white rounded-lg shadow-md p-4">
+            <div className="flex justify-between items-start mb-2">
+              <div>
+                <div className="text-sm text-gray-500">Date</div>
+                <div className="text-gray-900">{new Date(expense.expense_date).toLocaleDateString()}</div>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-gray-500">Amount</div>
+                <div className="font-bold text-red-600">
+                  {expense.currency === 'INR' ? '₹' : expense.currency === 'EUR' ? '€' : expense.currency === 'GBP' ? '£' : '$'}{expense.amount.toFixed(2)}
+                </div>
+              </div>
+            </div>
+            <div className="mb-2">
+              <div className="text-sm text-gray-500">Description</div>
+              <div className="text-gray-900">{expense.description}</div>
+            </div>
+            <div className="flex justify-between items-center mb-3">
+              <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                {expense.category}
+              </span>
+              <div className="text-sm text-gray-500">{expense.payment_method}</div>
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={() => handleEdit(expense)}
+                className="text-blue-600 hover:text-blue-900 font-medium text-sm"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDelete(expense.id)}
+                className="text-red-600 hover:text-red-900 font-medium text-sm"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop View - Table */}
+      <div className="hidden md:block bg-white rounded-lg shadow-md overflow-hidden">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
