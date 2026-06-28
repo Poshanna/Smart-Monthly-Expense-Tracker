@@ -68,7 +68,10 @@ A modern, full-stack expense tracking application with AI-powered receipt scanni
    pip install -r requirements.txt
    ```
 
-4. Run the backend server:
+4. (Optional) Set up environment variables:
+   Create a `.env` file in the backend directory (see `.env.example` for reference)
+
+5. Run the backend server:
    ```bash
    uvicorn main:app --host 0.0.0.0 --port 8001 --reload
    ```
@@ -86,7 +89,10 @@ A modern, full-stack expense tracking application with AI-powered receipt scanni
    npm install
    ```
 
-3. Start the frontend development server:
+3. **Important**: For local development, update the API URLs in frontend files to point to your local backend:
+   - Replace `https://smart-monthly-expense-tracker-1.onrender.com` with `http://localhost:8001`
+
+4. Start the frontend development server:
    ```bash
    npm run dev
    ```
